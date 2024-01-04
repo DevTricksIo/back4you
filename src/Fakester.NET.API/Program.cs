@@ -21,6 +21,9 @@ if (app.Environment.IsDevelopment())
     
 }
 
+app.MapGet("/", c => Task.Run((() =>
+        c.Response.Redirect("/swagger/index.html"))));
+
 app.UseSwagger();
 
 app.UseSwaggerUIs();
