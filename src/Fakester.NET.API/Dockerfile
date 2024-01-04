@@ -10,6 +10,7 @@ FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
 ARG BUILD_CONFIGURATION=Release
 WORKDIR /src
 COPY ["src/Fakester.NET.API/Fakester.NET.API.csproj", "src/Fakester.NET.API/"]
+COPY ["src/Fakester.NET.Application/Fakester.NET.Application.csproj", "src/Fakester.NET.Application/"]
 RUN dotnet restore "./src/Fakester.NET.API/Fakester.NET.API.csproj"
 COPY . .
 WORKDIR "/src/src/Fakester.NET.API"
